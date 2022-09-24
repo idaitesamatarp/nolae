@@ -1,0 +1,4 @@
+.screen-container {
+  width: calc(100% - 80%);
+  height: 100%;
+}

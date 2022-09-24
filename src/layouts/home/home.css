@@ -1,0 +1,8 @@
+.main {
+  background-color: #fff; 
+  display: flex;
+  width: 80%;
+  height: 40vw;
+  margin: 5% auto;
+  border-radius: 30px;
+}
