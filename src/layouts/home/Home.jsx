@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "../auth/Login";
 import Library from "../libraries/Library";
 import Feed from "../feeds/Feed";
-import Trending from "../trandings/Trending";
+import Trending from "../trendings/Trending";
 import Player from "../players/Player";
 import Favorites from "../favorites/Favorites";
 import "./home.css";

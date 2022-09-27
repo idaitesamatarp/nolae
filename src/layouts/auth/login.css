@@ -1,13 +1,14 @@
 .login-page {
   background-color: #fff;
   border-radius: 30px;
-  height: 100%;
-  width: 80%;
+  height: 20vw;
+  width: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   flex-direction: column;
+  margin: 10% auto;
 }
 
 .logo {
