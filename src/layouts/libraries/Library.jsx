@@ -26,7 +26,7 @@ export default function Library() {
           <div
             className="playlist-card"
             key={playlist.id}
-            onClick={() => playPlaylist(playlist)}
+            onClick={() => playPlaylist(playlist.id)}
           >
             <img
               src={playlist.images[0].url}
