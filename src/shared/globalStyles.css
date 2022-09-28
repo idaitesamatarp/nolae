@@ -11,3 +11,7 @@
     repeating-linear-gradient(#ebe9eb55, #ebe9eb);
   border-radius: 30px;
 }
+
+.flex {
+  display: flex;
+}

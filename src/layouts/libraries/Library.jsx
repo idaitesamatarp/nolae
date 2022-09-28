@@ -10,6 +10,7 @@ export default function Library() {
 
   useEffect(() => {
     api.get("me/playlists").then((response) => {
+      // console.log("response", response.data.items[0].id);
       setPlaylists(response.data.items);
     });
   }, []);
