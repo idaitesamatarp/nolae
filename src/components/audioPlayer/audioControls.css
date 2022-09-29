@@ -1,0 +1,52 @@
+.audio-control {
+  width: 100%;
+  height: 100%;
+  align-items: center;
+}
+
+.control-wrapper {
+  width: 80%;
+  margin: 0px auto 5px auto;
+  align-items: center;
+}
+
+.action-btn {
+  margin: 0px 2px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.action-btn:hover {
+  transform: scale(1.1);
+}
+
+.play-pause-btn {
+  margin: 0 5px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-image: linear-gradient(
+    to left top,
+    #ffa1d7,
+    #fba6dc,
+    #f6abe0,
+    #f2afe3,
+    #eeb4e6,
+    #f6b7df,
+    #fbbad8,
+    #ffbed3,
+    #ffc7c2,
+    #ffd6b1,
+    #ffe9a9,
+    #f5ffb1
+  );
+  box-shadow: 0px 8px 32px 0px #e0cddd;
+  border-radius: 20px;
+  transition: all 0.2s ease-in-out;
+  color: #fff;
+}
+
+.play-pause-btn:hover {
+  transform: scale(1.1);
+}

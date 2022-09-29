@@ -1,0 +1,11 @@
+.audio-image {
+  width: 20%;
+  align-items: center;
+  justify-content: center;
+}
+
+.audio-image img {
+  border-radius: 10px;
+  padding-bottom: 6px;
+  width: 100%;
+}

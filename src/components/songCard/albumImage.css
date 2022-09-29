@@ -1,5 +1,5 @@
 .album-image {
-  width: 80%;
+  width: 65%;
   align-items: center;
   justify-content: center;
   position: relative;
@@ -7,7 +7,6 @@
 }
 
 .album-image img {
-  border-radius: 30px;
   width: 100%;
   aspect-ratio: 1;
 }

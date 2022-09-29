@@ -7,7 +7,7 @@ export default function AlbumInfo({ album }) {
     artists.push(element.name);
   });
 
-  console.log("album", album);
+  // console.log("album", album);
   return (
     <div className="album-info-card">
       <div className="album-name-container">
