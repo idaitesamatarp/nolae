@@ -5,9 +5,10 @@
 }
 
 .control-wrapper {
-  width: 80%;
+  width: 100%;
   margin: 0px auto 5px auto;
   align-items: center;
+  justify-content: center;
 }
 
 .action-btn {
@@ -26,21 +27,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  background-image: linear-gradient(
-    to left top,
-    #ffa1d7,
-    #fba6dc,
-    #f6abe0,
-    #f2afe3,
-    #eeb4e6,
-    #f6b7df,
-    #fbbad8,
-    #ffbed3,
-    #ffc7c2,
-    #ffd6b1,
-    #ffe9a9,
-    #f5ffb1
-  );
+  background: linear-gradient(40deg, #9991be 20%, #554994 100%);
   box-shadow: 0px 8px 32px 0px #e0cddd;
   border-radius: 20px;
   transition: all 0.2s ease-in-out;

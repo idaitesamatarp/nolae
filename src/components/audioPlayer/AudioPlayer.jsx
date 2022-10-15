@@ -2,7 +2,6 @@ import React, { useRef, useState, useEffect } from "react";
 import "./audioplayer.css";
 import AudioImage from "./AudioImage";
 import AudioControls from "./AudioControls";
-import WaveAnimation from "./WaveAnimation";
 
 export default function AudioPlayer({
   currentTrack,
@@ -84,10 +83,17 @@ export default function AudioPlayer({
     return n > 9 ? "" + n : "0" + n;
   };
 
+  console.log("total", total);
   return (
     <div className="audio-player-card flex">
       <div className="audio-player-left flex">
         <AudioImage image={currentTrack?.album?.images[0]?.url} />
+      </div>
+      <div className="audio-player-label flex">
+        <p className="songname">{total[currentIndex]?.track?.name}</p>
+        <p className="artist">{currentTrack?.album?.artists[0].name}</p>
+      </div>
+      <div className="audio-player-right flex">
         <AudioControls
           isPlaying={isPlaying}
           setIsPlaying={setIsPlaying}
@@ -95,11 +101,6 @@ export default function AudioPlayer({
           handlePrev={handlePrev}
           total={total}
         />
-      </div>
-      <div className="audio-player-center flex">
-        <WaveAnimation isPlaying={true}/>
-      </div>
-      <div className="audio-player-right flex">
         <p className="duration">0:{addZero(Math.round(trackProgress))}</p>
       </div>
     </div>

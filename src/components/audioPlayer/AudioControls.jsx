@@ -20,12 +20,12 @@ export default function AudioControls({
     <div className="audio-control flex">
       <div className="control-wrapper flex">
         <div className="action-btn flex" onClick={handlePrev}>
-          <IconContext.Provider value={{ size: "35px", color: "#fbbad8" }}>
+          <IconContext.Provider value={{ size: "35px", color: "#9991be" }}>
             <IoPlaySkipBack />
           </IconContext.Provider>
         </div>
         <div className="action-btn flex">
-          <IconContext.Provider value={{ size: "35px", color: "#fbbad8" }}>
+          <IconContext.Provider value={{ size: "35px", color: "#9991be" }}>
             <IoPlayBack />
           </IconContext.Provider>
         </div>
@@ -42,12 +42,12 @@ export default function AudioControls({
           </IconContext.Provider>
         </div>
         <div className="action-btn flex">
-          <IconContext.Provider value={{ size: "35px", color: "#fbbad8" }}>
+          <IconContext.Provider value={{ size: "35px", color: "#9991be" }}>
             <IoPlayForward />
           </IconContext.Provider>
         </div>
         <div className="action-btn flex" onClick={handlePrev}>
-          <IconContext.Provider value={{ size: "35px", color: "#fbbad8" }}>
+          <IconContext.Provider value={{ size: "35px", color: "#9991be" }}>
             <IoPlaySkipForward />
           </IconContext.Provider>
         </div>
