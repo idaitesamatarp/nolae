@@ -16,7 +16,7 @@
 }
 
 .audio-player-label {
-  width: 30%;
+  width: 25%;
   height: 100%;
   flex-direction: column;
   justify-content: center;
@@ -41,12 +41,21 @@
   font-weight: 400;
 }
 
-.audio-player-center {
-  width: 50%;
-  height: 100%;
-}
-
 .audio-player-right {
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+}
+
+.song-duration {
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 7px;
+}
+
+.duration {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0;
+  color: black;
 }

@@ -1,12 +1,11 @@
 .audio-control {
   width: 100%;
-  height: 100%;
   align-items: center;
 }
 
 .control-wrapper {
   width: 100%;
-  margin: 0px auto 5px auto;
+  margin: 0px auto;
   align-items: center;
   justify-content: center;
 }

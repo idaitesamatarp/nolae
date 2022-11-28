@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import "./audioplayer.css";
 import AudioImage from "./AudioImage";
 import AudioControls from "./AudioControls";
+import ProgressBar from "./ProgressBar";
 
 export default function AudioPlayer({
   currentTrack,
@@ -14,14 +15,14 @@ export default function AudioPlayer({
   var audioSrc = total[currentIndex]?.track.preview_url;
 
   const audioRef = useRef(new Audio(total[0]?.track.preview_url));
-  console.log("audioref", audioRef.current);
+  // console.log("audioref", audioRef.current);
 
   const intervalRef = useRef();
   const isReady = useRef(false);
 
   const { duration } = audioRef.current;
 
-  const currenPercentage = duration ? (trackProgress / duration) * 100 : 0;
+  const currenPercentage = duration ? (trackProgress / duration) * 100 : 1;
 
   const startTimer = () => {
     clearInterval(intervalRef.current);
@@ -32,17 +33,27 @@ export default function AudioPlayer({
       } else {
         setTrackProgress(audioRef.current.currentTime);
       }
-    }, [1000]);
+    }, [2000]);
   };
 
   useEffect(() => {
-    if (isPlaying && audioRef.current) {
-      audioRef.current = new Audio(audioSrc);
-      audioRef.current.play();
-      startTimer();
+    if (audioRef.current.src) {
+      if (isPlaying) {
+        audioRef.current.play();
+        startTimer();
+      } else {
+        clearInterval(intervalRef.current);
+        audioRef.current.pause();
+      }
     } else {
-      clearInterval(intervalRef.current);
-      audioRef.current.pause();
+      if (isPlaying) {
+        audioRef.current = new Audio(audioSrc);
+        audioRef.current.play();
+        startTimer();
+      } else {
+        clearInterval(intervalRef.current);
+        audioRef.current.pause();
+      }
     }
   }, [isPlaying]);
 
@@ -75,22 +86,22 @@ export default function AudioPlayer({
   };
 
   const handlePrev = () => {
-    if (currentIndex - 1 < 0) setCurrentIndex(currentIndex - 1);
-    else currentIndex(currentIndex - 1);
+    if (currentIndex - 1 < 0) setCurrentIndex(total.length - 1);
+    else setCurrentIndex(currentIndex - 1);
   };
 
   const addZero = (n) => {
     return n > 9 ? "" + n : "0" + n;
   };
 
-  console.log("total", total);
+  // console.log("total", total);
   return (
     <div className="audio-player-card flex">
       <div className="audio-player-left flex">
         <AudioImage image={currentTrack?.album?.images[0]?.url} />
       </div>
       <div className="audio-player-label flex">
-        <p className="songname">{total[currentIndex]?.track?.name}</p>
+        <p className="songname">{currentTrack?.name}</p>
         <p className="artist">{currentTrack?.album?.artists[0].name}</p>
       </div>
       <div className="audio-player-right flex">
@@ -101,7 +112,16 @@ export default function AudioPlayer({
           handlePrev={handlePrev}
           total={total}
         />
-        <p className="duration">0:{addZero(Math.round(trackProgress))}</p>
+        <div className="song-duration flex">
+          <p className="duration">0:{addZero(Math.round(trackProgress))}</p>
+          <ProgressBar
+            percentage={currenPercentage}
+            isPlaying={true}
+            color="#554994"
+            size={400}
+          />
+          <p className="duration">0:30</p>
+        </div>
       </div>
     </div>
   );
