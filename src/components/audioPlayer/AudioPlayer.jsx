@@ -10,19 +10,19 @@ export default function AudioPlayer({
   setCurrentIndex,
   total,
 }) {
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
   const [trackProgress, setTrackProgress] = useState(0);
   var audioSrc = total[currentIndex]?.track.preview_url;
 
   const audioRef = useRef(new Audio(total[0]?.track.preview_url));
-  // console.log("audioref", audioRef.current);
 
   const intervalRef = useRef();
+
   const isReady = useRef(false);
 
   const { duration } = audioRef.current;
 
-  const currenPercentage = duration ? (trackProgress / duration) * 100 : 1;
+  const currentPercentage = duration ? (trackProgress / duration) * 100 : 1;
 
   const startTimer = () => {
     clearInterval(intervalRef.current);
@@ -33,7 +33,7 @@ export default function AudioPlayer({
       } else {
         setTrackProgress(audioRef.current.currentTime);
       }
-    }, [2000]);
+    }, [1000]);
   };
 
   useEffect(() => {
@@ -95,6 +95,7 @@ export default function AudioPlayer({
   };
 
   // console.log("total", total);
+
   return (
     <div className="audio-player-card flex">
       <div className="audio-player-left flex">
@@ -115,8 +116,8 @@ export default function AudioPlayer({
         <div className="song-duration flex">
           <p className="duration">0:{addZero(Math.round(trackProgress))}</p>
           <ProgressBar
-            percentage={currenPercentage}
-            isPlaying={true}
+            percentage={currentPercentage}
+            isPlaying={isPlaying}
             color="#554994"
             size={400}
           />

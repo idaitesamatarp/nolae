@@ -1,7 +1,7 @@
 import React from "react";
 import "./progressBar.css";
 
-export default function ProgressBar({ percentage, isPlaying, size, color }) {
+export default function ProgressBar({ percentage, size, color }) {
   const containerStyles = {
     height: 12,
     width: size,

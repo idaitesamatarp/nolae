@@ -9,7 +9,8 @@
       #ffffff 40px
     ),
     repeating-linear-gradient(#ebe9eb55, #ebe9eb);
-  border-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
 }
 
 .flex {
